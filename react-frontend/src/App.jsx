@@ -7,13 +7,20 @@ import Homepage from './views/Homepage';
 import Registerpage from './views/Registerpage';
 import Loginpage from './views/Loginpage';
 import Dashboard from './views/Dashboard';
-import Navbar from './views/Navbar';
-
+import Navbar from './components/Navbar.jsx';
+import Footer from './components/Footer.jsx';
+import { Container } from 'react-bootstrap';
 function App() {
   return (
     <>
-      <AuthProvider> {/* Wrap your app with AuthProvider if you're using authentication */}
-        <Navbar /> {/* Navbar will be displayed on all pages */}
+      <AuthProvider> 
+        
+        <Navbar /> 
+        <Container>
+          <div>Welcome to Rentals!</div>
+        </Container>
+        <Footer />
+        
         <Routes>
           <Route exact path="/" element={<Homepage />} /> {/* Homepage route */}
           <Route path="/register" element={<Registerpage />} /> {/* Register route */}
