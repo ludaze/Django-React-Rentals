@@ -33,10 +33,11 @@ class MyTokenObtainPairSerializer(TokenObtainPairSerializer):
 class RegisterSerializer(serializers.ModelSerializer):
     password = serializers.CharField(write_only=True, required=True, validators=[validate_password] )
     confirm_password = serializers.CharField(write_only = True, required=True)
+    phone_number = serializers.CharField(write_only = True, required=True)
 
     class Meta:
         model = CustomUser
-        fields = ['email', 'username','password','confirm_password']
+        fields = ['email', 'username','password','confirm_password', 'phone_number']
 
     def validate(self, attrs):
         # Check if password and confirm_password match
@@ -47,14 +48,17 @@ class RegisterSerializer(serializers.ModelSerializer):
     def create(self,validated_data):
         # validated_data.pop('confirm_password')
         # password = validated_data.pop('password', None)
-        
+        print("Validated Data:", validated_data)
 
+        phone_number = validated_data.pop('phone_number')
         user = CustomUser.objects.create(
             username = validated_data['username'],
             email=validated_data['email'],
+            
             # is_active=True,  
         )
         user.set_password(validated_data['password'])
         user.save()
+        Profile.objects.create(user=user, phone_number=phone_number)
 
         return user

@@ -1,0 +1,36 @@
+/* General styles */
+.form-label-margin {
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  /* Media queries for different screen sizes */
+  @media (max-width: 768px) {
+    .form-label-margin {
+      margin-top: 0.5rem;
+      margin-bottom: 0.25rem;
+    }
+  
+    .card-header {
+      font-size: 1.5rem;
+    }
+  
+    .form-control {
+      font-size: 0.9rem;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .form-label-margin {
+      margin-top: 0.25rem;
+      margin-bottom: 0.125rem;
+    }
+  
+    .card-header {
+      font-size: 1.2rem;
+    }
+  
+    .form-control {
+      font-size: 0.8rem;
+    }
+  }
