@@ -16,10 +16,10 @@ function App() {
       <AuthProvider> 
         
         <Navbar /> 
-        <Container>
+        {/* <Container className='text-center full-page-container'>
           <div>Welcome to Rentals!</div>
         </Container>
-        <Footer />
+         */}
         
         <Routes>
           <Route exact path="/" element={<Homepage />} /> {/* Homepage route */}
@@ -27,6 +27,7 @@ function App() {
           <Route path="/login" element={<Loginpage />} /> {/* Login route */}
           <Route path="/dashboard" element={<PrivateRoute><Dashboard /></PrivateRoute>} /> {/* Private route for Dashboard */}
         </Routes>
+        <Footer />
       </AuthProvider>
     </>
   );

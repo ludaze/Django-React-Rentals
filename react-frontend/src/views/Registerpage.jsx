@@ -48,9 +48,9 @@ function Registerpage() {
   return (
     <Container>
       <Row>
-        <Col md={4} xs={2}>1</Col>
+        <Col md={4} xs={2}></Col>
         <Col md={4} xs={8}>
-          <Card>
+          <Card className="mt-5">
             <CardHeader as="h3" className="text-center bg-black text-light">
               Sign Up
             </CardHeader>
@@ -84,7 +84,7 @@ function Registerpage() {
             </CardBody>
           </Card>
         </Col>
-        <Col md={4} xs={2}>1</Col>
+        <Col md={4} xs={2}></Col>
       </Row>
     </Container>
   )
