@@ -30,6 +30,14 @@ class MyTokenObtainPairSerializer(TokenObtainPairSerializer):
         
         return token
     
+class LoginSerializer(serializers.ModelSerializer):
+    email = serializers.EmailField(required=True)
+    password = serializers.CharField(write_only=True, required=True, validators=[validate_password] )
+    
+    class Meta:
+        model = CustomUser
+        fields = ['email', 'password']
+
 class RegisterSerializer(serializers.ModelSerializer):
     password = serializers.CharField(write_only=True, required=True, validators=[validate_password] )
     confirm_password = serializers.CharField(write_only = True, required=True)

@@ -7,7 +7,7 @@ import Homepage from './views/Homepage';
 import Registerpage from './views/Registerpage';
 import Loginpage from './views/Loginpage';
 import Dashboard from './views/Dashboard';
-import Navbar from './components/Navbar.jsx';
+import NavigationBar from './components/NavigationBar.jsx';
 import Footer from './components/Footer.jsx';
 import { Container } from 'react-bootstrap';
 function App() {
@@ -15,7 +15,7 @@ function App() {
     <>
       <AuthProvider> 
         
-        <Navbar /> 
+        <NavigationBar /> 
         {/* <Container className='text-center full-page-container'>
           <div>Welcome to Rentals!</div>
         </Container>

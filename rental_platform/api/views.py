@@ -6,6 +6,7 @@ from rest_framework_simplejwt.views import TokenObtainPairView
 from api.models import CustomUser
 from rest_framework.response import Response
 from rest_framework.decorators import api_view, permission_classes
+from rest_framework.views import APIView;
 
 # Create your views here.
 
@@ -25,6 +26,7 @@ class RegisterVIew(generics.CreateAPIView):
     queryset = CustomUser.objects.all()
     permission_classes = (AllowAny,)
     serializer_class = RegisterSerializer
+
 
 @api_view(['GET', 'POST'])
 @permission_classes([IsAuthenticated])
