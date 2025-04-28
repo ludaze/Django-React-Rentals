@@ -9,6 +9,7 @@ import Loginpage from './views/Loginpage';
 import Dashboard from './views/Dashboard';
 import NavigationBar from './components/NavigationBar.jsx';
 import Footer from './components/Footer.jsx';
+import ClothingCardDetail from './components/ClothingCardDetail.jsx';
 import { Container } from 'react-bootstrap';
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
           <Route path="/register" element={<Registerpage />} /> {/* Register route */}
           <Route path="/login" element={<Loginpage />} /> {/* Login route */}
           <Route path="/dashboard" element={<PrivateRoute><Dashboard /></PrivateRoute>} /> {/* Private route for Dashboard */}
+          <Route path="/clothing/:id" element={<ClothingCardDetail />} /> {/* Private route for ClothingCardDetail */}
         </Routes>
         <Footer />
       </AuthProvider>
