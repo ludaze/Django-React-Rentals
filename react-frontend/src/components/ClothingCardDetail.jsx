@@ -1,7 +1,6 @@
 import React, {useState, useEffect} from "react";
-import { Card, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import { Navigate, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import userIcon from '../assets/images/user-icon.webp';
 
 function ClothingCardDetail () {

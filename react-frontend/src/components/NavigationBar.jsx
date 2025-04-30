@@ -3,11 +3,12 @@ import { Navbar, Nav, NavDropdown, Button, Container, Form } from 'react-bootstr
 import 'bootstrap/dist/css/bootstrap.min.css';
 import AuthContext from '../context/AuthContext';
 import ProfileIcon from './ProfileIcon'; // Import the ProfileIcon component
+import '../assets/css/Navigation.css'; // Import your CSS file for styling
 
 function NavigationBar() {
   const {user, logoutUser} = useContext(AuthContext);
   return (
-    <Navbar bg="dark" variant="dark" expand="lg">
+    <Navbar variant="dark" expand="lg">
       <Navbar.Brand href="#">Rentals</Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">

@@ -7,7 +7,7 @@ function Dashboard() {
     <div>
       Dashboards
 <ClothingCard clothing={{id:1, name:"Clothing 1", price_per_day:100}}/>
-    <ClothingList/>
+   <div style={{display: "flex",  justifyContent:"center", alignItems:"center" }}><ClothingList/></div> 
     {/* <ClothingCardDetail/> */}
     </div>
   )

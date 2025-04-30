@@ -14,7 +14,7 @@ function ClothingList () {
     ];
 
     return (
-        <div className="d-flex flex-wrap justify-content-center">
+        <div className="d-flex flex-wrap " style={{ paddingInline: '3rem', marginTop: '2rem' }}>
             {clothing.map((item) => (
                 <ClothingCard key={item.id} clothing={item} />
             ))}
