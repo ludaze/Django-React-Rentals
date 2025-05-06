@@ -7,6 +7,7 @@ import Homepage from './views/Homepage';
 import Registerpage from './views/Registerpage';
 import Loginpage from './views/Loginpage';
 import Dashboard from './views/Dashboard';
+import ProfilePage from './views/ProfilePage.jsx';
 import NavigationBar from './components/NavigationBar.jsx';
 import Footer from './components/Footer.jsx';
 import ClothingCardDetail from './components/ClothingCardDetail.jsx';
@@ -29,6 +30,7 @@ function App() {
           <Route path="/login" element={<Loginpage />} /> {/* Login route */}
           <Route path="/dashboard" element={<PrivateRoute><Dashboard /></PrivateRoute>} /> {/* Private route for Dashboard */}
           <Route path="/clothing/:id" element={<PrivateRoute> <SingleItemPage /></PrivateRoute>} /> {/* Private route for ClothingCardDetail */}
+          <Route path="/profile" element={<PrivateRoute><ProfilePage /></PrivateRoute>} /> {/* Private route for ProfilePage */}
         </Routes>
         <Footer />
       </AuthProvider>

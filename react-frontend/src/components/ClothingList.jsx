@@ -1,21 +1,41 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Card, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { Navigate } from "react-router-dom";
 import ClothingCard from "./ClothingCard";
 
 function ClothingList () {
-    const clothing = [
-        { id: 1, name: "T-shirt", price_per_day: "$5" },
-        { id: 2, name: "Jeans", price_per_day: "$10" },
-        { id: 3, name: "Jacket", price_per_day: "$15" },
-        { id: 4, name: "Shoes", price_per_day: "$8" },
-        { id: 5, name: "Hat", price_per_day: "$3" },
-    ];
+    const [data,setdata] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
+
+    useEffect(() =>{
+        const fetchClothingItems = async () => {
+            try {
+                const response = await fetch(`http://localhost:8000/clothing/`);
+                if (!response.ok) {
+                    throw new Error("Failed to fetch clothing items");
+                }
+                const clothingData = await response.json();
+                setdata(clothingData);
+                setLoading(false);
+            }
+            catch (err) {
+                console.error("Error fetching clothing items:", err);
+                setError(err.message);
+                setLoading(false);
+            }
+        };
+        fetchClothingItems();
+    }, []);
+
+    if(loading){
+        return <div>Loading...</div>;
+    }
 
     return (
         <div className="d-flex flex-wrap " style={{ paddingInline: '3rem', marginTop: '2rem' }}>
-            {clothing.map((item) => (
+            {data.map((item) => (
                 <ClothingCard key={item.id} clothing={item} />
             ))}
         </div>

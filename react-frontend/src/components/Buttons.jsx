@@ -1,5 +1,6 @@
 import {React,useContext} from 'react';
 import AuthContext from '../context/AuthContext';
+import '../assets/css/Buttons.css';
 export function LoginButton () {
     return (
         <button 
@@ -18,7 +19,7 @@ export function LogoutButton () {
     
     return (
         <button 
-            className="btn btn-danger"
+            className="logout-btn"
             onClick={logoutUser}
             >
             Logout

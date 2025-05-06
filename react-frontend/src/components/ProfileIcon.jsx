@@ -21,7 +21,7 @@ function ProfileIcon(props) {
                         } id = "user-dropdown" align="end">
 
             
-            <NavDropdown.Item href="#"><button className="btn">Profile</button></NavDropdown.Item>
+            <NavDropdown.Item href="#">Profile</NavDropdown.Item>
             <NavDropdown.Item href="#">{button} </NavDropdown.Item>
         </NavDropdown>
     )
